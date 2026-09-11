@@ -2700,1170 +2700,390 @@ function cleanVoiceDestination(text) {
             .trim();
 
 
-    /* =========================================================
-   COMPLETE SATHYABAMA CAMPUS DIRECTORY
-   Based on Sathyabama official campus map
-========================================================= */
-
-const SATHYABAMA_CAMPUS = [
-
-    /* =====================================================
-       ADMINISTRATIVE / RESEARCH
-    ===================================================== */
-
-    {
-        id: 1,
-        name: "Administrative Block",
-        aliases: [
-            "administrative block",
-            "admin block",
-            "administration block",
-            "admin office"
-        ],
-        category: "Administrative"
-    },
-
-    {
-        id: 2,
-        name: "Colonel Dr. Jeppiaar Memorial",
-        aliases: [
-            "colonel dr jeppiaar memorial",
-            "dr jeppiaar memorial",
-            "jeppiaar memorial",
-            "jeppiaar memorial block"
-        ],
-        category: "Administrative"
-    },
-
-    {
-        id: 3,
-        name: "Reception Block",
-        aliases: [
-            "reception block",
-            "reception",
-            "main reception"
-        ],
-        category: "Administrative"
-    },
-
-    {
-        id: 4,
-        name: "Controller of Examination",
-        aliases: [
-            "controller of examination",
-            "controller of examinations",
-            "examination controller",
-            "coe",
-            "exam controller"
-        ],
-        category: "Administrative"
-    },
-
-    {
-        id: 5,
-        name: "Auditorium Block",
-        aliases: [
-            "auditorium block",
-            "main auditorium",
-            "auditorium"
-        ],
-        category: "Facilities"
-    },
-
-    {
-        id: 6,
-        name: "Central Library",
-        aliases: [
-            "central library",
-            "library",
-            "main library",
-            "digital library"
-        ],
-        category: "Academic"
-    },
-
-    {
-        id: 7,
-        name: "International Research Centre",
-        aliases: [
-            "international research centre",
-            "international research center",
-            "irc",
-            "research centre",
-            "research center"
-        ],
-        category: "Research"
-    },
-
-    {
-        id: 8,
-        name: "Colonel Dr. Jeppiaar Research Park",
-        aliases: [
-            "colonel dr jeppiaar research park",
-            "dr jeppiaar research park",
-            "jeppiaar research park",
-            "research park"
-        ],
-        category: "Research"
-    },
-
-
-    /* =====================================================
-       CLASSROOM / DEPARTMENT BLOCKS
-    ===================================================== */
-
-    {
-        id: 9,
-        name: "Class Room Block 01",
-        aliases: [
-            "class room block 01",
-            "classroom block 01",
-            "class room block one",
-            "classroom block one",
-            "class block 01",
-            "block 01",
-            "block one"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 10,
-        name: "Department of Computer Science and Engineering",
-        aliases: [
-            "computer science and engineering",
-            "computer science department",
-            "computer science engineering",
-            "cse department",
-            "cse",
-            "cse block",
-            "computer science block"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 11,
-        name: "Department of Electronics and Communication Engineering",
-        aliases: [
-            "electronics and communication engineering",
-            "electronics communication engineering",
-            "ece department",
-            "ece",
-            "ece block",
-            "electronics block"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 12,
-        name: "Computer Science Laboratory",
-        aliases: [
-            "computer science laboratory",
-            "computer science lab",
-            "cse laboratory",
-            "cse lab",
-            "computer lab"
-        ],
-        category: "Laboratory"
-    },
-
-    {
-        id: 13,
-        name: "Department of Electrical and Electronics Engineering",
-        aliases: [
-            "electrical and electronics engineering",
-            "electrical electronics engineering",
-            "eee department",
-            "eee",
-            "eee block"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 14,
-        name: "Department of Mechanical Engineering",
-        aliases: [
-            "mechanical engineering",
-            "mechanical department",
-            "mechanical engineering department",
-            "mechanical block"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 15,
-        name: "Machine Shop and Drawing Hall",
-        aliases: [
-            "machine shop",
-            "machine shop and drawing hall",
-            "drawing hall",
-            "mechanical workshop"
-        ],
-        category: "Laboratory"
-    },
-
-    {
-        id: 16,
-        name: "Bio Medical Laboratory",
-        aliases: [
-            "bio medical laboratory",
-            "biomedical laboratory",
-            "biomedical lab",
-            "bio medical lab"
-        ],
-        category: "Laboratory"
-    },
-
-    {
-        id: 17,
-        name: "Department of Information Technology",
-        aliases: [
-            "information technology",
-            "information technology department",
-            "it department",
-            "it block",
-            "it"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 18,
-        name: "Fluid Mechanics Laboratory",
-        aliases: [
-            "fluid mechanics laboratory",
-            "fluid mechanics lab"
-        ],
-        category: "Laboratory"
-    },
-
-    {
-        id: 19,
-        name: "Computer Aided Manufacturing Laboratory",
-        aliases: [
-            "computer aided manufacturing laboratory",
-            "computer aided manufacturing lab",
-            "cam laboratory",
-            "cam lab"
-        ],
-        category: "Laboratory"
-    },
-
-    {
-        id: 20,
-        name: "Thermal Laboratory",
-        aliases: [
-            "thermal laboratory",
-            "thermal lab"
-        ],
-        category: "Laboratory"
-    },
-
-    {
-        id: 21,
-        name: "Department of Aeronautical Engineering",
-        aliases: [
-            "aeronautical engineering",
-            "aeronautical department",
-            "aeronautical engineering department",
-            "aeronautical block",
-            "aero department"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 22,
-        name: "Class Room Block 02",
-        aliases: [
-            "class room block 02",
-            "classroom block 02",
-            "class room block two",
-            "classroom block two",
-            "class block 02",
-            "block 02",
-            "block two"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 23,
-        name: "Class Room Block 03",
-        aliases: [
-            "class room block 03",
-            "classroom block 03",
-            "class room block three",
-            "classroom block three",
-            "class block 03",
-            "block 03",
-            "block three"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 24,
-        name: "Class Room Block 04",
-        aliases: [
-            "class room block 04",
-            "classroom block 04",
-            "class room block four",
-            "classroom block four",
-            "class block 04",
-            "block 04",
-            "block four"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 25,
-        name: "Student Activity Centre",
-        aliases: [
-            "student activity centre",
-            "student activity center",
-            "sac",
-            "student activity"
-        ],
-        category: "Student Facilities"
-    },
-
-    {
-        id: 26,
-        name: "Class Room Block 06",
-        aliases: [
-            "class room block 06",
-            "classroom block 06",
-            "class room block six",
-            "classroom block six",
-            "class block 06",
-            "block 06",
-            "block six"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 27,
-        name: "Class Room Block 07",
-        aliases: [
-            "class room block 07",
-            "classroom block 07",
-            "class room block seven",
-            "classroom block seven",
-            "class block 07",
-            "block 07",
-            "block seven"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 28,
-        name: "Class Room Block 08",
-        aliases: [
-            "class room block 08",
-            "classroom block 08",
-            "class room block eight",
-            "classroom block eight",
-            "class block 08",
-            "block 08",
-            "block eight"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 29,
-        name: "Class Room Block 14",
-        aliases: [
-            "class room block 14",
-            "classroom block 14",
-            "class room block fourteen",
-            "classroom block fourteen",
-            "class block 14",
-            "block 14",
-            "block fourteen"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 30,
-        name: "Class Room Block 15",
-        aliases: [
-            "class room block 15",
-            "classroom block 15",
-            "class room block fifteen",
-            "classroom block fifteen",
-            "class block 15",
-            "block 15",
-            "block fifteen"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 31,
-        name: "Class Room Block 16",
-        aliases: [
-            "class room block 16",
-            "classroom block 16",
-            "class room block sixteen",
-            "classroom block sixteen",
-            "class block 16",
-            "block 16",
-            "block sixteen"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 32,
-        name: "Class Room Block 18",
-        aliases: [
-            "class room block 18",
-            "classroom block 18",
-            "class room block eighteen",
-            "classroom block eighteen",
-            "class block 18",
-            "block 18",
-            "block eighteen"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 33,
-        name: "Class Room Block 19",
-        aliases: [
-            "class room block 19",
-            "classroom block 19",
-            "class room block nineteen",
-            "classroom block nineteen",
-            "class block 19",
-            "block 19",
-            "block nineteen"
-        ],
-        category: "Classroom"
-    },
-
-    {
-        id: 34,
-        name: "Department of Physics Chemistry and Maths",
-        aliases: [
-            "physics chemistry maths",
-            "physics chemistry mathematics",
-            "physics department",
-            "chemistry department",
-            "mathematics department",
-            "pcm department"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 35,
-        name: "Department of Civil Engineering",
-        aliases: [
-            "civil engineering",
-            "civil department",
-            "civil engineering department",
-            "civil block"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 36,
-        name: "Department of Visual Communication",
-        aliases: [
-            "visual communication",
-            "visual communication department",
-            "visual communication block",
-            "viscom"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 37,
-        name: "Department of Biotechnology and Biomedical Engineering",
-        aliases: [
-            "biotechnology",
-            "biotech",
-            "biotechnology department",
-            "biomedical engineering",
-            "biomedical engineering department",
-            "biomedical block"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 38,
-        name: "Department of Automobile Engineering",
-        aliases: [
-            "automobile engineering",
-            "automobile department",
-            "automobile engineering department",
-            "automobile block"
-        ],
-        category: "Department"
-    },
-
-    {
-        id: 39,
-        name: "Law Moot Court and Classrooms",
-        aliases: [
-            "law moot court",
-            "moot court",
-            "law moot court and classrooms",
-            "law classrooms"
-        ],
-        category: "Law"
-    },
-
-    {
-        id: 40,
-        name: "School of Law",
-        aliases: [
-            "school of law",
-            "law school",
-            "law department"
-        ],
-        category: "Law"
-    },
-
-    {
-        id: 41,
-        name: "School of Pharmacy",
-        aliases: [
-            "school of pharmacy",
-            "pharmacy school",
-            "pharmacy",
-            "pharmacy department"
-        ],
-        category: "Health"
-    },
-
-    {
-        id: 42,
-        name: "School of Management Studies",
-        aliases: [
-            "school of management studies",
-            "management studies",
-            "management school",
-            "management department"
-        ],
-        category: "Management"
-    },
-
-    {
-        id: 43,
-        name: "Department of Architecture",
-        aliases: [
-            "department of architecture",
-            "architecture department",
-            "architecture block",
-            "school of architecture",
-            "b arch",
-            "b.arch"
-        ],
-        category: "Architecture"
-    },
-
-    {
-        id: 44,
-        name: "Department of Fashion Design",
-        aliases: [
-            "fashion design",
-            "fashion design department",
-            "fashion design block"
-        ],
-        category: "Design"
-    },
-
-    {
-        id: 45,
-        name: "School of Nursing",
-        aliases: [
-            "school of nursing",
-            "nursing school",
-            "nursing department"
-        ],
-        category: "Health"
-    },
-
-    {
-        id: 46,
-        name: "Sathyabama Dental College and Hospital",
-        aliases: [
-            "dental college",
-            "dental hospital",
-            "dental college and hospital",
-            "dental college hospital",
-            "dental"
-        ],
-        category: "Health"
-    },
-
-
-    /* =====================================================
-       MESS / FOOD
-    ===================================================== */
-
-    {
-        id: 47,
-        name: "Boys Mess Hall",
-        aliases: [
-            "boys mess",
-            "boys mess hall",
-            "boys dining hall"
-        ],
-        category: "Food"
-    },
-
-    {
-        id: 48,
-        name: "Girls Mess Hall",
-        aliases: [
-            "girls mess",
-            "girls mess hall",
-            "girls dining hall"
-        ],
-        category: "Food"
-    },
-
-    {
-        id: 49,
-        name: "Main Canteen",
-        aliases: [
-            "canteen",
-            "main canteen",
-            "college canteen"
-        ],
-        category: "Food"
-    },
-
-
-    /* =====================================================
-       BOYS HOSTELS
-    ===================================================== */
-
-    {
-        id: 50,
-        name: "Dr. M. Gopalakrishnan Boys Hostel and Indoor Court",
-        aliases: [
-            "dr m gopalakrishnan boys hostel",
-            "m gopalakrishnan boys hostel",
-            "gopalakrishnan boys hostel",
-            "gopalakrishnan hostel",
-            "indoor court"
-        ],
-        category: "Boys Hostel"
-    },
-
-    {
-        id: 51,
-        name: "Dr. MGR Illam Boys Hostel",
-        aliases: [
-            "dr mgr illam boys hostel",
-            "mgr illam boys hostel",
-            "mgr boys hostel",
-            "mgr hostel"
-        ],
-        category: "Boys Hostel"
-    },
-
-    {
-        id: 52,
-        name: "Colonel Dr. Jeppiaar Illam Boys Hostel",
-        aliases: [
-            "colonel dr jeppiaar illam boys hostel",
-            "col dr jeppiaar illam boys hostel",
-            "jeppiaar illam boys hostel",
-            "jeppiaar boys hostel",
-            "jeppiaar hostel"
-        ],
-        category: "Boys Hostel"
-    },
-
-    {
-        id: 53,
-        name: "St. Antony's Illam Boys Hostel",
-        aliases: [
-            "st antonys illam boys hostel",
-            "st antony illam boys hostel",
-            "st antony boys hostel",
-            "antonys hostel"
-        ],
-        category: "Boys Hostel"
-    },
-
-    {
-        id: 54,
-        name: "Second Year Boys Hostel",
-        aliases: [
-            "second year boys hostel",
-            "2nd year boys hostel",
-            "boys second year hostel",
-            "second year boys"
-        ],
-        category: "Boys Hostel"
-    },
-
-    {
-        id: 55,
-        name: "Final Year Boys Hostel",
-        aliases: [
-            "final year boys hostel",
-            "boys final year hostel",
-            "final year boys"
-        ],
-        category: "Boys Hostel"
-    },
-
-
-    /* =====================================================
-       SPECIAL HOSTELS
-    ===================================================== */
-
-    {
-        id: 56,
-        name: "Dental UG and PG Hostel",
-        aliases: [
-            "dental ug and pg hostel",
-            "dental hostel",
-            "dental ug hostel",
-            "dental pg hostel"
-        ],
-        category: "Hostel"
-    },
-
-    {
-        id: 57,
-        name: "International Hostel",
-        aliases: [
-            "international hostel",
-            "international students hostel"
-        ],
-        category: "Hostel"
-    },
-
-
-    /* =====================================================
-       GIRLS HOSTELS
-    ===================================================== */
-
-    {
-        id: 58,
-        name: "Panimallar Illam Girls Hostel",
-        aliases: [
-            "panimallar illam girls hostel",
-            "panimallar girls hostel",
-            "panimallar hostel"
-        ],
-        category: "Girls Hostel"
-    },
-
-    {
-        id: 59,
-        name: "Final Year Girls Hostel",
-        aliases: [
-            "final year girls hostel",
-            "girls final year hostel",
-            "final year girls"
-        ],
-        category: "Girls Hostel"
-    },
-
-    {
-        id: 60,
-        name: "Immaculate Mary Illam Girls Hostel",
-        aliases: [
-            "immaculate mary illam girls hostel",
-            "immaculate mary girls hostel",
-            "immaculate mary hostel"
-        ],
-        category: "Girls Hostel"
-    },
-
-    {
-        id: 61,
-        name: "St. Mother Teresa Illam Girls Hostel",
-        aliases: [
-            "st mother teresa illam girls hostel",
-            "mother teresa girls hostel",
-            "st teresa girls hostel",
-            "mother teresa hostel"
-        ],
-        category: "Girls Hostel"
-    },
-
-    {
-        id: 62,
-        name: "Janakkiammal Illam Girls Hostel",
-        aliases: [
-            "janakkiammal illam girls hostel",
-            "janakkiammal girls hostel",
-            "janakkiammal hostel"
-        ],
-        category: "Girls Hostel"
-    },
-
-    {
-        id: 63,
-        name: "Mother of Rosary Illam Girls Hostel",
-        aliases: [
-            "mother of rosary illam girls hostel",
-            "mother of rosary girls hostel",
-            "rosary girls hostel",
-            "mother rosary hostel"
-        ],
-        category: "Girls Hostel"
-    },
-
-    {
-        id: 64,
-        name: "Second Year Girls Hostel",
-        aliases: [
-            "second year girls hostel",
-            "2nd year girls hostel",
-            "girls second year hostel",
-            "second year girls"
-        ],
-        category: "Girls Hostel"
-    },
-
-
-    /* =====================================================
-       OTHER CAMPUS FACILITIES
-    ===================================================== */
-
-    {
-        id: 65,
-        name: "Open Air Theater",
-        aliases: [
-            "open air theater",
-            "open air theatre",
-            "oat",
-            "open theatre"
-        ],
-        category: "Facilities"
-    },
-
-    {
-        id: 66,
-        name: "Church",
-        aliases: [
-            "church",
-            "campus church"
-        ],
-        category: "Worship"
-    },
-
-    {
-        id: 67,
-        name: "Transport Block",
-        aliases: [
-            "transport block",
-            "transport office",
-            "transport",
-            "bus office"
-        ],
-        category: "Transport"
-    },
-
-    {
-        id: 68,
-        name: "Meteorological Tower",
-        aliases: [
-            "meteorological tower",
-            "meteorological tower",
-            "weather tower",
-            "metrological tower"
-        ],
-        category: "Research"
-    },
-
-    {
-        id: 69,
-        name: "Aero Hangar",
-        aliases: [
-            "aero hangar",
-            "aeronautical hangar",
-            "aircraft hangar",
-            "aeronautical lab hangar"
-        ],
-        category: "Aeronautical"
-    },
-
-    {
-        id: 70,
-        name: "Sewage Treatment Plant",
-        aliases: [
-            "sewage treatment plant",
-            "stp",
-            "sewage plant"
-        ],
-        category: "Utility"
-    },
-
-    /* Additional campus facilities */
-
-    {
-        id: 71,
-        name: "Main Gate",
-        aliases: [
-            "main gate",
-            "main entrance",
-            "main entrance gate",
-            "college main gate"
-        ],
-        category: "Entrance"
-    },
-
-    {
-        id: 72,
-        name: "North Gate",
-        aliases: [
-            "north gate",
-            "north entrance"
-        ],
-        category: "Entrance"
-    },
-
-    {
-        id: 73,
-        name: "South Gate",
-        aliases: [
-            "south gate",
-            "south entrance"
-        ],
-        category: "Entrance"
-    },
-
-    {
-        id: 74,
-        name: "Sports Ground",
-        aliases: [
-            "sports ground",
-            "playground",
-            "college ground",
-            "main ground",
-            "sports field"
-        ],
-        category: "Sports"
-    },
-
-    {
-        id: 75,
-        name: "Basketball Court",
-        aliases: [
-            "basketball court",
-            "basketball",
-            "basketball ground"
-        ],
-        category: "Sports"
-    },
-
-    {
-        id: 76,
-        name: "Volleyball Court",
-        aliases: [
-            "volleyball court",
-            "volleyball"
-        ],
-        category: "Sports"
-    },
-
-    {
-        id: 77,
-        name: "Tennis Court",
-        aliases: [
-            "tennis court",
-            "tennis"
-        ],
-        category: "Sports"
-    },
-
-    {
-        id: 78,
-        name: "Cricket Net",
-        aliases: [
-            "cricket net",
-            "cricket nets"
-        ],
-        category: "Sports"
-    },
-
-    {
-        id: 79,
-        name: "Gymnasium",
-        aliases: [
-            "gym",
-            "gymnasium",
-            "fitness centre",
-            "fitness center"
-        ],
-        category: "Sports"
-    },
-
-    {
-        id: 80,
-        name: "Medical Centre",
-        aliases: [
-            "medical centre",
-            "medical center",
-            "health centre",
-            "health center",
-            "medical room",
-            "campus hospital"
-        ],
-        category: "Health"
-    },
-
-    {
-        id: 81,
-        name: "Placement Cell",
-        aliases: [
-            "placement cell",
-            "placement office",
-            "training and placement",
-            "training placement office",
-            "placement department"
-        ],
-        category: "Administrative"
-    },
-
-    {
-        id: 82,
-        name: "Indian Bank",
-        aliases: [
-            "indian bank",
-            "bank",
-            "campus bank"
-        ],
-        category: "Banking"
-    },
-
-    {
-        id: 83,
-        name: "ATM",
-        aliases: [
-            "atm",
-            "cash machine",
-            "atm machine"
-        ],
-        category: "Banking"
-    },
-
-    {
-        id: 84,
-        name: "Food Court",
-        aliases: [
-            "food court",
-            "foodcourt"
-        ],
-        category: "Food"
-    },
-
-    {
-        id: 85,
-        name: "Temple",
-        aliases: [
-            "temple",
-            "campus temple"
-        ],
-        category: "Worship"
-    },
-
-    {
-        id: 86,
-        name: "Centre for Advanced Studies",
-        aliases: [
-            "centre for advanced studies",
-            "center for advanced studies",
-            "advanced studies",
-            "cas"
-        ],
-        category: "Academic"
-    },
-
-    {
-        id: 87,
-        name: "St. Paul's Block",
-        aliases: [
-            "st pauls block",
-            "st paul block",
-            "st pauls"
-        ],
-        category: "Academic"
-    },
-
-    {
-        id: 88,
-        name: "Tower Laboratory",
-        aliases: [
-            "tower lab",
-            "tower laboratory",
-            "tower labs"
-        ],
-        category: "Laboratory"
-    },
-
-    {
-        id: 89,
-        name: "Research Centre",
-        aliases: [
-            "research centre",
-            "research center"
-        ],
-        category: "Research"
-    },
-
-    {
-        id: 90,
-        name: "Innovation Centre",
-        aliases: [
-            "innovation centre",
-            "innovation center",
-            "innovation hub"
-        ],
-        category: "Innovation"
-    },
-
-    {
-        id: 91,
-        name: "Car Parking",
-        aliases: [
-            "car parking",
-            "car park",
-            "visitor parking",
-            "visitors car parking"
-        ],
-        category: "Parking"
-    },
-
-    {
-        id: 92,
-        name: "Bike Parking",
-        aliases: [
-            "bike parking",
-            "two wheeler parking",
-            "two wheeler park",
-            "bike park"
-        ],
-        category: "Parking"
-    }
-
-];
+    const campusPlaces = [
+
+        "administrative block",
+        "admin block",
+
+        "colonel dr jeppiaar memorial",
+        "dr jeppiaar memorial",
+        "jeppiaar memorial",
+
+        "reception block",
+        "reception",
+
+        "controller of examinations",
+        "controller of examination",
+        "examination controller",
+        "coe",
+
+        "auditorium block",
+        "main auditorium",
+        "auditorium",
+
+        "central library",
+        "library",
+
+        "international research centre",
+        "international research center",
+        "irc",
+
+        "colonel dr jeppiaar research park",
+        "dr jeppiaar research park",
+        "jeppiaar research park",
+        "research park",
+
+        "class room block 01",
+        "classroom block 01",
+        "class room block one",
+        "classroom block one",
+        "class block 01",
+
+        "department of computer science and engineering",
+        "computer science and engineering department",
+        "computer science department",
+        "computer science block",
+        "cse department",
+        "cse block",
+        "cse",
+
+        "department of electronics and communication engineering",
+        "electronics and communication engineering department",
+        "electronics and communication department",
+        "electronics and communication block",
+        "ece department",
+        "ece block",
+        "ece",
+
+        "computer science laboratory",
+        "computer science lab",
+        "cse laboratory",
+        "cse lab",
+
+        "department of electrical and electronics engineering",
+        "electrical and electronics engineering department",
+        "electrical and electronics department",
+        "electrical and electronics block",
+        "eee department",
+        "eee block",
+        "eee",
+
+        "department of mechanical engineering",
+        "mechanical engineering department",
+        "mechanical engineering block",
+        "mechanical block",
+        "mechanical department",
+
+        "indian bank",
+        "bank",
+
+        "machine shop and drawing hall",
+        "machine shop",
+        "drawing hall",
+
+        "bio medical laboratory",
+        "biomedical laboratory",
+        "biomedical lab",
+        "bio medical lab",
+
+        "department of information technology",
+        "information technology department",
+        "information technology block",
+        "it department",
+        "it block",
+
+        "fluid mechanics laboratory",
+        "fluid mechanics lab",
+
+        "computer aided manufacturing laboratory",
+        "computer aided manufacturing lab",
+        "cam laboratory",
+        "cam lab",
+
+        "thermal laboratory",
+        "thermal lab",
+
+        "department of chemical engineering",
+        "chemical engineering department",
+        "chemical engineering block",
+        "chemical block",
+        "chemical department",
+
+        "department of aeronautical engineering",
+        "aeronautical engineering department",
+        "aeronautical engineering block",
+        "aeronautical block",
+        "aeronautical department",
+
+        "class room block 02",
+        "classroom block 02",
+        "class room block two",
+        "classroom block two",
+        "class block 02",
+
+        "class room block 03",
+        "classroom block 03",
+        "class room block three",
+        "classroom block three",
+        "class block 03",
+
+        "class room block 04",
+        "classroom block 04",
+        "class room block four",
+        "classroom block four",
+        "class block 04",
+
+        "student activity centre",
+        "student activity center",
+        "sac",
+
+        "class room block 06",
+        "classroom block 06",
+        "class room block six",
+        "classroom block six",
+        "class block 06",
+
+        "class room block 07",
+        "classroom block 07",
+        "class room block seven",
+        "classroom block seven",
+        "class block 07",
+
+        "class room block 08",
+        "classroom block 08",
+        "class room block eight",
+        "classroom block eight",
+        "class block 08",
+
+        "class room block 14",
+        "classroom block 14",
+        "class room block fourteen",
+        "classroom block fourteen",
+        "class block 14",
+
+        "class room block 15",
+        "classroom block 15",
+        "class room block fifteen",
+        "classroom block fifteen",
+        "class block 15",
+
+        "class room block 16",
+        "classroom block 16",
+        "class room block sixteen",
+        "classroom block sixteen",
+        "class block 16",
+
+        "class room block 18",
+        "classroom block 18",
+        "class room block eighteen",
+        "classroom block eighteen",
+        "class block 18",
+
+        "class room block 19",
+        "classroom block 19",
+        "class room block nineteen",
+        "classroom block nineteen",
+        "class block 19",
+
+        "department of physics chemistry and maths",
+        "physics chemistry maths department",
+        "physics department",
+        "chemistry department",
+        "mathematics department",
+
+        "department of civil engineering",
+        "civil engineering department",
+        "civil engineering block",
+        "civil block",
+        "civil department",
+
+        "department of visual communication",
+        "visual communication department",
+        "visual communication block",
+
+        "department of biotechnology and biomedical engineering",
+        "biotechnology and biomedical engineering department",
+        "biotechnology department",
+        "biotechnology block",
+        "biotech department",
+        "biotech block",
+        "biomedical engineering department",
+        "biomedical engineering block",
+        "biomedical block",
+
+        "department of automobile engineering",
+        "automobile engineering department",
+        "automobile engineering block",
+        "automobile block",
+
+        "law moot court and classrooms",
+        "law moot court",
+        "moot court",
+
+        "school of law",
+        "law school",
+
+        "school of pharmacy",
+        "pharmacy school",
+        "pharmacy",
+
+        "school of management studies",
+        "management studies",
+        "management school",
+
+        "department of architecture",
+        "architecture department",
+        "architecture block",
+        "school of architecture",
+
+        "department of fashion design",
+        "fashion design department",
+        "fashion design block",
+
+        "school of nursing",
+        "nursing school",
+
+        "dental college and hospital",
+        "dental college",
+        "dental hospital",
+        "dental college hospital",
+
+        "boys mess hall",
+        "boys mess",
+
+        "girls mess hall",
+        "girls mess",
+
+        "main canteen",
+        "canteen",
+
+        "dr m gopalakrishnan boys hostel",
+        "m gopalakrishnan boys hostel",
+        "gopalakrishnan boys hostel",
+        "indoor court",
+
+        "dr mgr illam boys hostel",
+        "mgr illam boys hostel",
+        "mgr boys hostel",
+
+        "col dr jeppiaar illam boys hostel",
+        "colonel dr jeppiaar illam boys hostel",
+        "jeppiaar illam boys hostel",
+        "jeppiaar boys hostel",
+
+        "st antonys illam boys hostel",
+        "st antony boys hostel",
+
+        "second year boys hostel",
+        "2nd year boys hostel",
+        "boys second year hostel",
+
+        "final year boys hostel",
+        "boys final year hostel",
+
+        "dental ug and pg hostel",
+        "dental hostel",
+
+        "international hostel",
+
+        "panimallar illam girls hostel",
+        "panimallar girls hostel",
+
+        "final year girls hostel",
+        "girls final year hostel",
+
+        "immaculate mary illam girls hostel",
+        "immaculate mary girls hostel",
+
+        "st mother teresa illam girls hostel",
+        "mother teresa girls hostel",
+        "st teresa girls hostel",
+
+        "janakkiammal illam girls hostel",
+        "janakkiammal girls hostel",
+
+        "mother of rosary illam girls hostel",
+        "mother of rosary girls hostel",
+
+        "second year girls hostel",
+        "2nd year girls hostel",
+        "girls second year hostel",
+
+        "open air theater",
+        "open air theatre",
+        "oat",
+
+        "church",
+
+        "transport block",
+        "transport office",
+        "transport",
+
+        "meteorological tower",
+        "weather tower",
+
+        "aero hangar",
+        "aeronautical hangar",
+        "aircraft hangar",
+
+        "sewage treatment plant",
+        "stp",
+
+        "indoor stadium",
+
+        "sports ground",
+        "playground",
+        "ground",
+
+        "gym",
+        "gymnasium",
+
+        "car parking",
+        "bike parking",
+        "two wheeler parking",
+        "parking",
+
+        "main gate",
+        "main entrance",
+        "entrance gate",
+
+        "north gate",
+        "south gate",
+
+        "food court",
+
+        "medical centre",
+        "medical center",
+        "health centre",
+        "health center",
+
+        "placement cell",
+        "placement office",
+        "training and placement",
+        "training and placement office",
+
+        "exam cell",
+        "examination cell",
+
+        "atm",
+
+        "temple",
+
+        "centre for advanced studies",
+        "center for advanced studies",
+
+        "st pauls block",
+        "st paul's block",
+
+        "tower lab",
+        "tower laboratory",
+
+        "research centre",
+        "research center",
+
+        "innovation centre",
+        "innovation center"
+    ];
 
 
     campusPlaces.sort(
